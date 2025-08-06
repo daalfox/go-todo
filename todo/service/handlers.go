@@ -7,9 +7,9 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/daalfox/go-todo/pkg/utils"
 	"github.com/daalfox/go-todo/todo"
 	"github.com/daalfox/go-todo/todo/store"
+	"github.com/daalfox/go-todo/utils"
 	"github.com/go-chi/chi/v5"
 )
 
