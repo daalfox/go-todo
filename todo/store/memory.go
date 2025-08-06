@@ -54,5 +54,17 @@ func (s *InMemoryStore) Delete(id int) error {
 	return ErrNotFound
 }
 func (s *InMemoryStore) Update(id int, updated todo.Todo) error {
+	var target *todo.Todo
+	for _, item := range s.todos {
+		if item.Id == id {
+			target = item
+		}
+	}
+	if target == nil {
+		return ErrNotFound
+	}
+	target.Title = updated.Title
+	target.Done = updated.Done
+
 	return nil
 }

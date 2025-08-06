@@ -103,6 +103,4 @@ func (s *Service) updateTodo(w http.ResponseWriter, r *http.Request) {
 		log.Printf("failed to fetch todo: %v", err)
 		return
 	}
-
-	utils.Encode(w, http.StatusOK, todo)
 }
