@@ -27,6 +27,8 @@ func (s *Service) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 func (s *Service) addRoutes() {
 	r := s.router
 	r.Get("/", s.listTodos)
-	r.Get("/{id}", s.getTodo)
 	r.Post("/", s.addTodo)
+	r.Get("/{id}", s.getTodo)
+	r.Delete("/{id}", s.deleteTodo)
+	r.Put("/{id}", s.updateTodo)
 }
